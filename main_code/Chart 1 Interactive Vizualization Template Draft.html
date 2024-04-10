@@ -1,0 +1,119 @@
+// Still need to adapt to our specific data points but a template draft is ready
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+        <label for="minYear">Min Year:</label>
+        <input type="number" id="minYear" value="2019" />
+        <label for="maxYear">Max Year:</label>
+        <input type="number" id="maxYear" value="2022" />
+        <button onclick="filterByYear()">Apply Year Range Filter</button>
+    </div>
+    <div>
+        <label for="minPrice">Min Price:</label>
+        <input type="number" id="minPrice" value="10" />
+        <label for="maxPrice">Max Price:</label>
+        <input type="number" id="maxPrice" value="45" />
+        <button onclick="filterByPrice()">Apply Price Range Filter</button>
+    </div>
+    <canvas id="stockChart" width="800" height="400"></canvas>
+
+    <script>
+        // Sample JSON data
+        const jsonData = {
+            "stocks": [
+                {
+                    "name": "Stock A",
+                    "priceRange": [10, 20, 30, 40],
+                    "years": [2019, 2020, 2021, 2022]
+                },
+                {
+                    "name": "Stock B",
+                    "priceRange": [15, 25, 35, 45],
+                    "years": [2019, 2020, 2021, 2022]
+                },
+                // Add more stocks as needed
+            ]
+        };
+
+        // Extracting data
+        let stocks = jsonData.stocks;
+        let labels = stocks[0].years;
+        let datasets = stocks.map(stock => {
+            return {
+                label: stock.name,
+                data: stock.priceRange,
+                borderColor: '#' + (Math.random() * 0xFFFFFF << 0).toString(16), // Random color
+                fill: false
+            };
+        });
+
+        // Creating chart
+        let ctx = document.getElementById('stockChart').getContext('2d');
+        let stockChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: datasets
+            },
+            options: {
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Stock Price'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Years'
+                        }
+                    }
+                }
+            }
+        });
+
+        function filterByYear() {
+            let minYear = parseInt(document.getElementById('minYear').value);
+            let maxYear = parseInt(document.getElementById('maxYear').value);
+
+            if (minYear <= maxYear) {
+                labels = labels.filter(year => year >= minYear && year <= maxYear);
+                datasets.forEach(dataset => {
+                    dataset.data = dataset.data.slice(labels.indexOf(minYear), labels.indexOf(maxYear) + 1);
+                });
+
+                stockChart.data.labels = labels;
+                stockChart.data.datasets = datasets;
+                stockChart.update();
+            } else {
+                alert("Min Year cannot be greater than Max Year.");
+            }
+        }
+
+        function filterByPrice() {
+            let minPrice = parseInt(document.getElementById('minPrice').value);
+            let maxPrice = parseInt(document.getElementById('maxPrice').value);
+
+            if (minPrice <= maxPrice) {
+                datasets.forEach(dataset => {
+                    dataset.data = dataset.data.filter(price => price >= minPrice && price <= maxPrice);
+                });
+
+                stockChart.data.datasets = datasets;
+                stockChart.update();
+            } else {
+                alert("Min Price cannot be greater than Max Price.");
+            }
+        }
+    </script>
+</body>
+</html>
