@@ -3,23 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Market Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Stock Market Data Visualization Dashboard</title>
     <link rel="stylesheet" href="Combination_Style.css"> <!-- Reference to Combination_Style.css -->
 
     <!-- Include Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="script.js"></script>
+    <script src="Simulated_Fetch.js"></script> <!-- Include Simulated_Fetch.js -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('bgdesert.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-image: url('titlebackground.jpg');
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: white; /* Set text color to white for better visibility */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value to change transparency */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>STOCK MARKET DASHBOARD</h1>
-        <div id="currentProfile">Overview</div> <!-- Label indicating the current profile -->
+        <h1>Stock Market Data Visualization Dashboard</h1>
+        <div id="currentProfile">Team Options</div> <!-- Label indicating the current profile -->
+
+        <!-- Buttons for selecting pre-filtered profiles -->
+        <div class="profile-buttons">
+            <button onclick="selectProfile('Ipsita')">Ipsita</button>
+            <button onclick="selectProfile('Siobhan')">Siobhan</button>
+            <button onclick="selectProfile('Drew')">Drew</button>
+            <button onclick="selectProfile('Juan')">Juan</button>
+        </div>
     </header>
 
     <!-- Chart containers -->
-    <div class="chart-container">
-        <div id="chartContainer1" class="chart large">
+    <div class="container">
+        <div id="chartContainer1" class="chart large top-container">
             <div class="filter-top">
                 <label for="stock1">Stock:</label>
                 <select id="stock1">
@@ -32,14 +64,14 @@
                     <option value="NFLX">Netflix</option>
                 </select>
                 <label for="fromDate1">From Date:</label>
-                <input type="date" id="fromDate1" min="2013-01-01" max="2023-12-31">
+                <input type="date" id="fromDate1" value="2013-01-01"> <!-- Default From Date: January 1, 2013 -->
                 <label for="toDate1">To Date:</label>
-                <input type="date" id="toDate1" min="2013-01-01" max="2023-12-31">
+                <input type="date" id="toDate1" value="2023-01-01"> <!-- Default To Date: January 1, 2023 -->
                 <button class="generateButton" onclick="generateGraph()">Generate Graph</button>
             </div>
         </div> <!-- Large chart at the bottom -->
     </div>
-    <div class="chart-container">
+    <div class="container">
         <div id="chartContainer2" class="chart small"></div> <!-- Small chart at the left upper quarter -->
         <div class="form">
             <label for="stock2">Stock:</label>
@@ -53,12 +85,13 @@
                 <option value="NFLX">Netflix</option>
             </select>
             <label for="fromDate2">From Date:</label>
-            <input type="date" id="fromDate2" min="2013-01-01" max="2023-12-31">
+            <input type="date" id="fromDate2" value="2013-01-01"> <!-- Default From Date: January 1, 2013 -->
             <br>
             <label for="toDate2">To Date:</label>
-            <input type="date" id="toDate2" min="2013-01-01" max="2023-12-31">
+            <input type="date" id="toDate2" value="2023-01-01"> <!-- Default To Date: January 1, 2023 -->
             <br>
-            <button class="generateButton" onclick="generateGraph()">Generate Graph</button>
+            <button class="generateButton" onclick="generateGraph2()">Generate Graph</button>
+            <!-- Update the onclick function to generateGraph2 -->
         </div>
 
         <div id="chartContainer3" class="chart small"></div> <!-- Small chart at the right upper quarter -->
@@ -74,14 +107,29 @@
                 <option value="NFLX">Netflix</option>
             </select>
             <label for="fromDate3">From Date:</label>
-            <input type="date" id="fromDate3" min="2013-01-01" max="2023-12-31">
+            <input type="date" id="fromDate3" value="2013-01-01"> <!-- Default From Date: January 1, 2013 -->
             <br>
             <label for="toDate3">To Date:</label>
-            <input type="date" id="toDate3" min="2013-01-01" max="2023-12-31">
+            <input type="date" id="toDate3" value="2023-01-01"> <!-- Default To Date: January 1, 2023 -->
             <br>
             <button class="generateButton" onclick="generateGraph()">Generate Graph</button>
         </div>
-
     </div>
+    
+    <style>
+        .filter-top input[type="date"] {
+            width: auto; /* Set width to auto to fit the text */
+        }
+    </style>
+    
+    <script>
+        // Adjust width of input elements dynamically to fit text
+        window.addEventListener('DOMContentLoaded', function() {
+            const dateInputs = document.querySelectorAll('.filter-top input[type="date"]');
+            dateInputs.forEach(function(input) {
+                input.style.width = input.scrollWidth + 'px';
+            });
+        });
+    </script>
 </body>
 </html>

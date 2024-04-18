@@ -25,6 +25,11 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
 }
 
+/* Adjusted height for the top container */
+.top-container {
+    min-height: 300px; /* Adjust the height as needed */
+}
+
 /* Form styles */
 .form {
     margin-bottom: 20px;
@@ -98,6 +103,11 @@ label {
 
 /* Add hover effect to charts */
 .chart:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Add hover effect to top chart */
+.top-container:hover .chart {
     transform: scale(1.02); /* Slightly scale up on hover */
 }
 
