@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="Combination_Style.css"> <!-- Reference to Combination_Style.css -->
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="script.js"></script>
+    <script src="script_graphs.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('bgdesert.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            background-image: url('titlebackground.jpg');
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: white; /* Set text color to white for better visibility */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value to change transparency */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+    <div class="container">
+        <h3>Choose a stock and date range for which you want to see the performance</h3>
+        <div class="form">
+            <label for="stock">Stock:</label>
+            <select id="stock">
+                <option value="AAPL">Apple</option>
+                <option value="GOOG">Google</option>
+                <option value="META">Meta</option>
+                <option value="TSLA">Tesla</option>
+                <option value="MSFT">Microsoft</option>
+                <option value="NVDA">Nvidia</option>
+                <option value="NFLX">Netflix</option>
+            </select>
+            <label for="fromDate">From Date:</label>
+            <input type="date" id="fromDate" min="2013-01-01" max="2023-12-31">
+            <br>
+            <label for="toDate">To Date:</label>
+            <input type="date" id="toDate" min="2013-01-01" max="2023-12-31">
+            <br>
+            <button class="generateButton" onclick="generateGraph()">Generate Graph</button>
+        </div>
+        <!-- Chart container -->
+        <div id="chartContainer"></div>
+        <!-- <script src="script_graphs.js"></script> -->
+        <h3>Choose two stocks to compare the performance from January 2013 till December 2023</h3>
+        <div class="container1">
+            <div class="form">
+                <label for="stock1">Stock 1:</label>
+                <select id="stock1">
+                    <option value="AAPL">Apple</option>
+                    <option value="GOOG">Google</option>
+                    <option value="META">Meta</option>
+                    <option value="TSLA">Tesla</option>
+                    <option value="MSFT">Microsoft</option>
+                    <option value="NVDA">Nvidia</option>
+                    <option value="NFLX">Netflix</option>
+                </select>
+                <label for="stock1">Stock 2:</label>
+                <select id="stock2">
+                    <option value="AAPL">Apple</option>
+                    <option value="GOOG">Google</option>
+                    <option value="META">Meta</option>
+                    <option value="TSLA">Tesla</option>
+                    <option value="MSFT">Microsoft</option>
+                    <option value="NVDA">Nvidia</option>
+                    <option value="NFLX">Netflix</option>
+                </select>
+                <br>
+                <button class="generateButton" onclick="generateGraphs()">Generate Graph</button>
+            </div>
+            <div id="chartContainers"></div>
+            <h3>Choose a stock to see the full performance of all data available</h3>
+        <div class="container1">
+            <div class="form">
+                <label for="stock1">Stock 1:</label>
+                <select id="stock1">
+                    <option value="AAPL">Apple</option>
+                    <option value="GOOG">Google</option>
+                    <option value="META">Meta</option>
+                    <option value="TSLA">Tesla</option>
+                    <option value="MSFT">Microsoft</option>
+                    <option value="NVDA">Nvidia</option>
+                    <option value="NFLX">Netflix</option>
+                </select>
+                <br>
+                <button class="generateButton" onclick="generateGraphs2()">Generate Graph</button>
+            </div>
+            <div id="chartContainers"></div>
+</html>
