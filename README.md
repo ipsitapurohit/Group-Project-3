@@ -3,10 +3,10 @@
 Create an interactive dashboard that will fetch stock market data of top 7 tech companies like Google, Apple, Meta, Tesla, Nvidia, Netflix, and Microsoft since 2000 and represent them in a line graph.
         
 Created by:
-            Siobhan: Project Manager and Presentation Coordinator
-            Ipsita: Backend Data Server Developer and Data Preparation Specialist
-            Juan: Frontend User Interface Designer and Developer
-            Drew: Presenter and Chart Creator
+           - **Siobhan**: Project Manager and Presentation Coordinator
+           - **Ipsita**: Backend Data Server Developer and Data Preparation Specialist
+           - **Juan**: Frontend User Interface Designer and Developer
+           - **Drew**: Presenter and Chart Creator
 
 Compare the performance of $1000 invested at the beginning of 2000 and what would it be worth as of Jan 1st, 2024 for all of these stocks and based on input received from the user show line graph of the investment growth over the 24 years.
 
