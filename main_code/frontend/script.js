@@ -2,10 +2,8 @@ function generateGraph() {
     const symbol = document.getElementById('stock').value;
     const startDate = document.getElementById('fromDate').value;
     const endDate = document.getElementById('toDate').value;
-
     // Fetch data from MongoDB
     fetch(`http://localhost:3100/api/getData?symbol=${symbol}&startDate=${startDate}&endDate=${endDate}`)
-    
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -24,12 +22,10 @@ function generateGraph() {
             console.log('Raw data from backend:', data);
             const formattedData = formatDataForUIProcessing(data);
             const chartData = processData(formattedData);
-                       
             renderChart(chartData);
         })
         .catch(error => console.error('Error fetching or processing data:', error));
 }
-
 function formatDataForUIProcessing(data) {
     // Format data
     const formattedData = data[0].Results.map(entry => ({
@@ -40,7 +36,6 @@ function formatDataForUIProcessing(data) {
     console.log('Formatted Data  ', formattedData);
     return formattedData;
 }
-
 // Function to format date as "YYYY-MM-DD"
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -49,18 +44,14 @@ function formatDate(dateString) {
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
 }
-
-
 function processData(formattedData) {
     const labels = formattedData.map(entry => entry.Date);
     const values = formattedData.map(entry => entry.Close);
-
     return {
         labels: labels,
         values: values
     };
 }
-
 function renderChart(chartData) {
     console.log('Chart data:', chartData); // Check if chartData is correct
     const trace = {
@@ -84,9 +75,7 @@ function renderChart(chartData) {
             rangemode: 'tozero'
         }
     };
-
     console.log('Rendering chart...'); // Check if the chart rendering is attempted
-    
     // Plotly.newPlot to render the line chart
     Plotly.newPlot('chartContainer', [trace], layout)
     .then(() => console.log('Chart rendered successfully'))

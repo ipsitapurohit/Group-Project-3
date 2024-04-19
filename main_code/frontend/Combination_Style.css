@@ -1,0 +1,144 @@
+/* style.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4e6; /* Off-White/Tan Background */
+    color: #333; /* Main text color */
+}
+
+header {
+    background-color: #8db580; /* Green Accent Color */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f5f5dc; /* Off-White/Tan Background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+/* Adjusted height for the top container */
+.top-container {
+    min-height: 300px; /* Adjust the height as needed */
+}
+
+/* Form styles */
+.form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+label {
+    margin-right: 10px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Filter options styles */
+.form input[type="date"],
+.form select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 2;
+    margin-right: 10px;
+    transition: transform 0.2s ease; /* Smooth transition */
+}
+
+/* Add hover effect to filter options */
+.form input[type="date"]:hover,
+.form select:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Button styles */
+.generateButton {
+    flex: 1;
+    margin-top: 10px;
+    background-color: #3498db; /* Animation Color: Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.generateButton:hover {
+    background-color: #2980b9; /* Darker shade of blue on hover */
+}
+
+/* Chart container styles */
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Chart styles */
+.chart {
+    flex: 1;
+    min-width: calc(33.33% - 20px); /* Adjust chart width */
+    margin-bottom: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    overflow: hidden; /* Hide overflow content */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Add hover effect to charts */
+.chart:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Add hover effect to top chart */
+.top-container:hover .chart {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Filter section for large chart */
+.filter-top {
+    display: flex;
+    justify-content: space-between; /* Spread items evenly */
+    padding: 10px;
+    background-color: #fff; /* White background */
+    border-bottom: 1px solid #ccc; /* Add a border at the bottom */
+}
+
+.filter-top select,
+.filter-top input[type="date"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1; /* Equal width for all elements */
+    margin-right: 10px; /* Add some space between input fields */
+}
+
+.filter-top .generateButton {
+    background-color: #3498db; /* Animation Color: Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-top .generateButton:hover {
+    background-color: #2980b9; /* Darker shade of blue on hover */
+}
