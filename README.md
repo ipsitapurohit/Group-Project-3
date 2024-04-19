@@ -1,4 +1,4 @@
-![HTML Preview]([https://raw.githubusercontent.com/ipsitapurohit/Group-Project-3/main/readme.PNG](https://github.com/ipsitapurohit/Group-Project-3/blob/main/Readmehtml.html))
+
 # Group-Project-3
 Create an interactive dashboard that will fetch stock market data of top 7 tech companies like Google, Apple, Meta, Tesla, Nvidia, Netflix, and Microsoft since 2000 and represent them in a line graph.
         
