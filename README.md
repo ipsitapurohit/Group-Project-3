@@ -1,8 +1,4 @@
-# Group-Project-3
 
-1. Create an interactive dashboard that will fetch stock market data of top 7 tech companies like Google, Apple, Meta, Tesla, Nvdia, Netflix and Microsoft since 2000 and represent them in a line graph.
-
-2. Compare the performance of $1000 invested at the beginning of 2000 and what would it be worth as of Jan 1st, 2024 for all of these stocks and based on input received from the user show line graph of the investment growth over the 24 years.
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +35,11 @@
 </head>
 <body>
     <div class="container">
-        <h2>Data and Delivery</h2>
+        <h2># Group-Project-3
+
+1. Create an interactive dashboard that will fetch stock market data of top 7 tech companies like Google, Apple, Meta, Tesla, Nvdia, Netflix and Microsoft since 2000 and represent them in a line graph.
+
+2. Compare the performance of $1000 invested at the beginning of 2000 and what would it be worth as of Jan 1st, 2024 for all of these stocks and based on input received from the user show line graph of the investment growth over the 24 years.</h2>
         <ol>
             <li><strong>Dataset:</strong> The project contains stock data from 2013 to 2023, covering various tech stocks. This data was sourced from reputable financial data providers, ensuring its reliability and relevance.</li>
             <li><strong>Database Usage:</strong> A SQL database was employed to house the stock data, facilitating efficient storage, retrieval, and manipulation of the data for analysis purposes.</li>
