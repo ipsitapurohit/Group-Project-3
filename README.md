@@ -25,5 +25,5 @@ Created by:
 
 ## Usability
 1. **Front-end Interface:** The front-end interface runs smoothly without errors, allowing users to interact seamlessly with the data and access the various visualizations and filtering options provided.
-2. **D3.js Integration:** The D3.js library is utilized to create interactive visualizations, enhancing the user experience by enabling dynamic interactions and data exploration.
+2. **plotly Integration:** The Plotly library is utilized to create interactive visualizations, enhancing the user experience by enabling dynamic interactions and data exploration.
 3. **User-Driven Interaction:** The project incorporates user-driven interaction through HTML menus and dropdowns, empowering users to filter stocks based on different investment strategies such as growth, value, and dividend, thereby customizing their analysis experience.
