@@ -8,11 +8,9 @@ Created by:
            - **Juan**: Frontend User Interface Designer and Developer
            - **Drew**: Presenter and Chart Creator
 
-Compare the performance of $1000 invested at the beginning of 2013 and what would it be worth as of Jan 1st, 2024 for all of these stocks and based on input received from the user show line graph of the investment growth over the 24 years.
-
 ## Data and Delivery
 - **Dataset:** The project contains stock data from 2013 to 2023, covering various tech stocks. This data was sourced from reputable financial data providers, ensuring its reliability and relevance.
-- **Database Usage:** A SQL database was employed to house the stock data, facilitating efficient storage, retrieval, and manipulation of the data for analysis purposes.
+- **Database Usage:** A No SQL database (MongoDB) was employed to house the stock data, facilitating efficient storage, retrieval, and manipulation of the data for analysis purposes.
 - **README.md:** The GitHub repository includes a comprehensive README.md file that outlines the following:
   - **Project Overview:** The purpose of the project is to analyze stock growth of tech companies from 2013 to 2023, with the aim of aiding investment decisions.
   - **Instructions:** Users can interact with the project through a front-end interface, allowing them to filter stocks based on different investment strategies, such as growth, value, and dividend.
